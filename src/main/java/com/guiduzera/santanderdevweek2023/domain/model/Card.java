@@ -1,4 +1,4 @@
-package com.guiduzera.santanderdevweek2023.model;
+package com.guiduzera.santanderdevweek2023.domain.model;
 
 import java.math.BigDecimal;
 
@@ -8,8 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name = "account")
-public class Account {
+@Entity(name = "card")
+public class Card {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,13 +18,7 @@ public class Account {
     @Column(nullable = false, unique = true)
     private String number;
 
-    @Column(nullable = false)
-    private String agency;
-
-    @Column(nullable = false, scale = 13, precision = 2)
-    private BigDecimal balance;
-
-    @Column(name = "additional_limit", nullable = false, scale = 13, precision = 2)
+    @Column(name = "available_limit", nullable = false, scale = 13, precision = 2)
     private BigDecimal limit;
 
     public long getId() {
@@ -40,22 +35,6 @@ public class Account {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public String getAgency() {
-        return agency;
-    }
-
-    public void setAgency(String agency) {
-        this.agency = agency;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public BigDecimal getLimit() {

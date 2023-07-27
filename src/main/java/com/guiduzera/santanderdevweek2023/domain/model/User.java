@@ -1,4 +1,4 @@
-package com.guiduzera.santanderdevweek2023.model;
+package com.guiduzera.santanderdevweek2023.domain.model;
 
 import java.util.List;
 

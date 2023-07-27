@@ -1,4 +1,4 @@
-package com.guiduzera.santanderdevweek2023.model;
+package com.guiduzera.santanderdevweek2023.domain.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
