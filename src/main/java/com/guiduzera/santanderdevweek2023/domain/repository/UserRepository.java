@@ -7,5 +7,5 @@ import com.guiduzera.santanderdevweek2023.domain.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    
+    public User findByName(String name);
 }

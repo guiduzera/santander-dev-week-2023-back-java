@@ -8,7 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name = "card")
+@Entity(name = "tb_card")
 public class Card {
 
     @Id
@@ -18,7 +18,7 @@ public class Card {
     @Column(nullable = false, unique = true)
     private String number;
 
-    @Column(name = "available_limit", nullable = false, scale = 13, precision = 2)
+    @Column(name = "available_limit", nullable = false, scale = 2, precision = 13)
     private BigDecimal limit;
 
     public long getId() {
