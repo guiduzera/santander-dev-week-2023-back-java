@@ -10,7 +10,7 @@ import com.guiduzera.santanderdevweek2023.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -18,9 +18,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(NoSuchElementException::new);
-
-        return user;
+        return userRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
     @Override
@@ -33,5 +31,4 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.save(user);
     }
-    
 }
